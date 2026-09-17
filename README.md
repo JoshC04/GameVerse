@@ -25,6 +25,7 @@ I configured and managed the deployment pipeline (Railway + MongoDB Atlas) and w
 
 ### Setup
 1. Clone the repo and install frontend dependencies:
+
 git clone https://github.com/JoshC04/GameVerse.git
 
 cd GameVerse/frontend
