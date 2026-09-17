@@ -26,11 +26,11 @@ I configured and managed the deployment pipeline (Railway + MongoDB Atlas) and w
 ### Setup
 1. Clone the repo and install frontend dependencies:
 
-git clone https://github.com/JoshC04/GameVerse.git
+      git clone https://github.com/JoshC04/GameVerse.git
 
-cd GameVerse/frontend
+      cd GameVerse/frontend
 
-npm install
+      npm install
 
 3. Install MongoDB Compass and connect to a local database on port `27017`.
 4. Configure `application.properties` with your local database name and port.
