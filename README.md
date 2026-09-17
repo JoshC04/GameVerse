@@ -1,77 +1,74 @@
 # GameVerse
 
-GameVerse is a social media app in which provides services such as posting to a feed, party finding, groups, and messaging. The main
-goal of this app is to allow people to connect and interact with each other in multiple different ways.
+GameVerse is a full-stack social platform where users can post to a feed, find and join groups, discover parties/events, and message each other in real time. Built as a 5-person capstone project over one semester (330+ commits).
 
-## External Requirements
+**Stack:** React · Spring Boot · MongoDB · Railway (deployment)
 
-In order to build this project you first have to install:
+## My Contribution
 
--   [Node.js](https://nodejs.org/en/)
--   [MongoDB](https://www.mongodb.com/)
--   [React](https://react.dev/learn/installation)
--   [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
--   [Maven](https://maven.apache.org/download.cgi)
+I configured and managed the deployment pipeline (Railway + MongoDB Atlas) and wrote the automated test suite, including unit tests and Selenium-based behavioral tests covering core user flows.
 
-If you're downloading/cloning the repo, you don't need to install react, springboot, or maven. You need to just have the extentions in VSCode.
-If you don't have react installed run: npx create-react-app my-app
-If you dont have firebase installed run: npm install firebase  
-## Setup
+## Features
 
-1. Connect your MongoDB to the program.
-Steps:
-  - Install MongoDB Compass for Local databases
-  - Open the application and press "connect"
-  - name the database whatever you want to, just make sure its connected to your local host(27017)
-  - Now you have your own local database for our application.
-2. Configure your applications properties
-  - Ensure the ports are correct and the name of the database.
-**There will be more instructions as development continues such has JWT token and ways to connect to the MongoDB Atlas once its set up and deployed later.** 
+- Social feed with posts and interactions
+- Group creation and membership
+- Party/event finding
+- Real-time messaging
 
-## Running
-1. Start the springboot application backend. Run: mvn spring-boot:run
-2. change your directory the the frontend. Run: cd ./frontend/
-3. Run the react application. Run: npm start
-4. Verify that everything is running by vieiwng you localhost tab that opened when you ran the application.
+## Getting Started
 
-# Deployment
-GameVerse is deployed using Railway, MongoDB Compass, and MongoDB Atlas.
+### Prerequisites
+- [Node.js](https://nodejs.org/en/)
+- [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- [Maven](https://maven.apache.org/download.cgi)
+- [MongoDB Compass](https://www.mongodb.com/products/compass) (for local database management)
 
-1. Set up database in MongoDB Atlas and get connection string
+### Setup
+1. Clone the repo and install frontend dependencies:
 
-2. Connect to Atlas using MongoDB Compass to manage your database
+git clone https://github.com/JoshC04/GameVerse.git
+cd GameVerse/frontend
+npm install
 
-3. Deploy backend: Go to Railway → Deploy from GitHub → Add environment variables (MongoDB Atlas connection string)
+2. Install MongoDB Compass and connect to a local database on port `27017`.
+3. Configure `application.properties` with your local database name and port.
 
-4. Deploy frontend: Create new Railway project → Set root to frontend → Add environment variables
+### Running Locally
+From the project root — starts the Spring Boot backend
 
-Railway redeploys automatically on push to GitHub.
+mvn spring-boot:run
 
-# Testing
+In a separate terminal — starts the React frontend
 
-The unit tests are in `/GameVerse/test/java/com/GameVerse/GameVerse`.
+cd frontend
+npm start
 
-The behavioral tests are in `/GameVerse/test/java/com/GameVerse/GameVerse/selenium`.
+Once both are running, the app will be available at the localhost URL shown in your terminal.
 
-## Testing Technology
+## Deployment
 
-1. Testing frameworks are included with Maven and React. No additional installation needed.
-2. Maven handles all test dependencies automatically.
-3. No additional installation is required beyond Java, Node, and Chrome.
+GameVerse is deployed on Railway, with MongoDB Atlas as the production database.
+1. Set up a database in MongoDB Atlas and get the connection string.
+2. Deploy the backend on Railway (from GitHub), adding the Atlas connection string as an environment variable.
+3. Deploy the frontend as a separate Railway project with root set to `/frontend`.
 
-## Running Tests
+Railway auto-redeploys on every push to `main`.
 
-1. Run the backend + frontend(npm start) of the application(for selenium to run behavioral tests)
-2. Make sure you're in the GameVerse/ directory(otherwise next command will not work)
-3. run the command './mvnw test' in the termainl and the tests will run.
+## Testing
 
-*If you're using VScode, you can run tests via the testing tab or you can run them manually by going into the test folder and running each test.
+- Unit tests: `/GameVerse/test/java/com/GameVerse/GameVerse`
+- Selenium behavioral tests: `/GameVerse/test/java/com/GameVerse/GameVerse/selenium`
 
+Run with:
 
-# Authors
+./mvnw test
 
-Alandis Patterson(alandisp@email.sc.edu)
-Gage Hulbert(hulbertg@email.sc.edu)
-Joshua Cook(jc157@email.sc.edu)
-Quintarius Floyd(qfloyd@email.sc.edu)
-Jamius Cheatham(jamius@sc.edu)
+(Make sure both the backend and frontend are running first, since Selenium drives the live app.)
+
+## Team
+
+- Alandis Patterson
+- Gage Hulbert
+- Joshua Cook
+- Quintarius Floyd
+- Jamius Cheatham
